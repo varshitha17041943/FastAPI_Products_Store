@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Add a New Product</h2>
+    <form action="/add_product" method="post">
+        <input id="id" type="number" name="product_id" placeholder="Example: 1" required /> 
+        <input id="name" type="text" name="product_name" placeholder="Example: Smart Watch" maxlength="100" required/>
+        <input id="price" type="number" name="product_price" placeholder="Example: 4500" min="0.01" step="0.01" required/>
+        <input id="image_url"type="url" name="product_image_url" placeholder="Paste a public image URL" maxlength="500"/>
+        <button type="submit">Add Product</button>
+    </form>
+</body>
+</html>
