@@ -14,8 +14,14 @@ def home(req:Request):
         name="home.html"
     )
 
+@app.get("/addproducts", response_class=HTMLResponse)
+def add_product_page(req: Request):
+    return templates.TemplateResponse(
+        request=req,
+        name="products.html"
+    )
 @app.post("/add_product",response_class=HTMLResponse)
-def add_products(req:Request,product_id:int=Form(),product_name:str=Form(),product_price:float=Form(),product_image_url:str=Form()):
+def add_products(req:Request,product_id:int=Form(),product_name:str=Form(),product_price:float=Form(),product_image_url:str=Form("")):
     clean_name =product_name.strip()
     clean_image_url =product_image_url.strip()
     db=LocalSession()
@@ -38,11 +44,11 @@ def add_products(req:Request,product_id:int=Form(),product_name:str=Form(),produ
 
     db.add(new_product)
     db.commit()
-    return templates.TemplateResponse(
-        request=req,
-        name="products_list.html",
-        context={"product_id":product_id,"product_name":product_name,"product_price":product_price,"product_image_url":product_image_url}
+    return RedirectResponse(
+        url="/products",
+        status_code=303
     )
+
 
 @app.get("/products")
 def products(req: Request):
