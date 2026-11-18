@@ -1,24 +1,24 @@
 # Product Store Web Application
 
-A full-stack product catalog web application built with **Python**, **FastAPI**, **SQLAlchemy ORM**, **MySQL**, and **Jinja2** templates[cite: 7]. The application enables users to add products via validated HTML forms, browse the sorted product catalog, and manage inventory through RESTful routes[cite: 7].
+A full-stack product catalog web application built with **Python**, **FastAPI**, **SQLAlchemy ORM**, **MySQL**, and **Jinja2** templates. The application enables users to add products via validated HTML forms, browse the sorted product catalog, and manage inventory through RESTful routes.
 
 ---
 
 ## Features
 
-- **Product Catalog Management:** View all available products sorted by `product_id`, displaying product names, prices (₹), and product images[cite: 7].
-- **Add New Products:** Submit new items through an HTML form with server-side validation for non-empty product names and valid `http://` / `https://` image URLs[cite: 7].
-- **Product Deletion:** Remove existing products by name with structured `404 Not Found` HTTP exception handling[cite: 7].
-- **ORM Database Integration:** Uses SQLAlchemy ORM (`Product` model) for clean schema definition and MySQL database operations[cite: 7].
+- **Product Catalog Management:** View all available products sorted by `product_id`, displaying product names, prices (₹), and product images.
+- **Add New Products:** Submit new items through an HTML form with server-side validation for non-empty product names and valid `http://` / `https://` image URLs.
+- **Product Deletion:** Remove existing products by name with structured `404 Not Found` HTTP exception handling.
+- **ORM Database Integration:** Uses SQLAlchemy ORM (`Product` model) for clean schema definition and MySQL database operations.
 - **Interactive API Docs:** Automatically generated Swagger UI (`/docs`) and ReDoc (`/redoc`) endpoints provided by FastAPI.
 
 ---
 
 ## Tech Stack
 
-- **Backend Framework:** Python, FastAPI[cite: 7]
-- **Frontend & Templating:** HTML5, Jinja2 Templates[cite: 7]
-- **Database & ORM:** MySQL, SQLAlchemy ORM, `mysql-connector-python`[cite: 7]
+- **Backend Framework:** Python, FastAPI
+- **Frontend & Templating:** HTML5, Jinja2 Templates
+- **Database & ORM:** MySQL, SQLAlchemy ORM, `mysql-connector-python`
 - **Server:** Uvicorn
 
 ---
@@ -35,7 +35,6 @@ product_store_fastapi_project/
     ├── products.html         # Form interface to add new products
     └── products_list.html    # Dynamic product catalog display
 ```
-[cite: 7]
 
 ---
 
@@ -43,24 +42,24 @@ product_store_fastapi_project/
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
-| `GET` | `/` | Renders the store landing page (`home.html`)[cite: 7] |
-| `GET` | `/addproducts` | Renders the form page to add a new product (`products.html`)[cite: 7] |
-| `POST` | `/add_product` | Validates form inputs, saves the product to MySQL, and redirects to `/products`[cite: 7] |
-| `GET` | `/products` | Queries all products ordered by ID and renders `products_list.html`[cite: 7] |
-| `DELETE` | `/delete_products` | Deletes a matching product by `product_name` or returns a `404` error[cite: 7] |
+| `GET` | `/` | Renders the store landing page (`home.html`) |
+| `GET` | `/addproducts` | Renders the form page to add a new product (`products.html`) |
+| `POST` | `/add_product` | Validates form inputs, saves the product to MySQL, and redirects to `/products` |
+| `GET` | `/products` | Queries all products ordered by ID and renders `products_list.html` |
+| `DELETE` | `/delete_products` | Deletes a matching product by `product_name` or returns a `404` error |
 
 ---
 
 ## Database Schema (`products` Table)
 
-Defined in `model.py` using SQLAlchemy[cite: 7]:
+Defined in `model.py` using SQLAlchemy:
 
 | Column | Type | Constraints |
 | :--- | :--- | :--- |
-| `product_id` | `Integer` | Primary Key, Indexed[cite: 7] |
-| `product_name` | `String(100)` | Not Null[cite: 7] |
-| `product_price` | `Float(10, 2)` | Not Null[cite: 7] |
-| `product_image_url` | `String(500)` | Nullable[cite: 7] |
+| `product_id` | `Integer` | Primary Key, Indexed |
+| `product_name` | `String(100)` | Not Null |
+| `product_price` | `Float(10, 2)` | Not Null |
+| `product_image_url` | `String(500)` | Nullable |
 
 ---
 
@@ -71,7 +70,6 @@ Defined in `model.py` using SQLAlchemy[cite: 7]:
 git clone [https://github.com/varshitha17041943/FastAPI_Products_Store.git](https://github.com/varshitha17041943/FastAPI_Products_Store.git)
 cd FastAPI_Products_Store
 ```
-[cite: 10]
 
 ### 2. Create & Activate a Virtual Environment
 ```bash
@@ -88,16 +86,14 @@ pip install fastapi uvicorn sqlalchemy mysql-connector-python jinja2 python-mult
 ```
 
 ### 4. Configure MySQL Database
-1. Start your local MySQL server and create the database[cite: 7]:
+1. Start your local MySQL server and create the database:
    ```sql
    CREATE DATABASE productfastapi;
    ```
-  [cite: 7]
-2. Update your database connection string in `database.py`[cite: 7]:
+2. Update your database connection string in `database.py`:
    ```python
    url = "mysql+mysqlconnector://<username>:<password>@localhost:3306/productfastapi"
    ```
-  [cite: 7]
 
 ### 5. Run the Application
 ```bash
@@ -109,3 +105,9 @@ Open your browser and navigate to:
 - **Swagger API Docs:** `http://127.0.0.1:8000/docs`
 
 ---
+
+## Author
+
+**Varshitha Reddy**  
+- GitHub: [@varshitha17041943](https://github.com/varshitha17041943)  
+- LinkedIn: [N Varshitha](https://www.linkedin.com/in/n-varshitha)
