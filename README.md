@@ -110,4 +110,4 @@ Open your browser and navigate to:
 
 **Varshitha Reddy**  
 - GitHub: [@varshitha17041943](https://github.com/varshitha17041943)  
-- LinkedIn: [N Varshitha](https://www.linkedin.com/in/n-varshitha)
+- LinkedIn: https://www.linkedin.com/in/varshithareddy1704/
